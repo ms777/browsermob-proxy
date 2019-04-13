@@ -9,15 +9,16 @@
 				<exclude name="/*.class" />
 			</fileset>
 
-			<zipfileset includes="**/*.*" src="lib/slf4j-api-1.7.26.jar" />
-			<zipfileset includes="**/*.*" src="lib/slf4j-simple-1.7.26.jar"/>
-			<zipfileset includes="**/*.*" src="lib/netty-all-4.1.34.Final.jar"/>
-			<zipfileset includes="**/*.*" src="lib/bcprov-jdk15on-1.57.jar"/>
-			<zipfileset includes="**/*.*" src="lib/bcpkix-jdk15on-1.57.jar"/>
-			<zipfileset includes="**/*.*" src="lib/jackson-annotations-2.9.8.jar"/>
-			<zipfileset includes="**/*.*" src="lib/jackson-core-2.9.8.jar"/>
-			<zipfileset includes="**/*.*" src="lib/jackson-databind-2.9.8.jar"/>
-			<zipfileset includes="**/*.*" src="lib/littleproxy-2.0.0-beta-2.jar"/>
+			<zipfileset includes="**/*.*" src="lib/slf4j-api-1.7.26.jar" excludes="META-INF/*" />
+			<zipfileset includes="**/*.*" src="lib/slf4j-simple-1.7.26.jar" excludes="META-INF/*" />
+			<zipfileset includes="**/*.*" src="lib/netty-all-4.1.34.Final.jar" excludes="META-INF/*" />
+
+			<zipfileset includes="**/*.*" src="lib/bcprov-jdk15on-1.57.jar" excludes="META-INF/*" />
+			<zipfileset includes="**/*.*" src="lib/bcpkix-jdk15on-1.57.jar" excludes="META-INF/*" />
+
+			<zipfileset includes="**/*.*" src="lib/jackson-annotations-2.9.8.jar" excludes="META-INF/*" />
+			<zipfileset includes="**/*.*" src="lib/jackson-core-2.9.8.jar" excludes="META-INF/*" />
+			<zipfileset includes="**/*.*" src="lib/jackson-databind-2.9.8.jar" excludes="META-INF/*" />
 
 			<fileset dir="${git}/browsermob-core/src/main/resources" />
 			<fileset dir="${git}/mitm/src/main/resources" />
