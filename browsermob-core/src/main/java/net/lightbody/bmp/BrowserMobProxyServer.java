@@ -54,6 +54,7 @@ import org.littleshoot.proxy.HttpFiltersSourceAdapter;
 import org.littleshoot.proxy.HttpProxyServer;
 import org.littleshoot.proxy.HttpProxyServerBootstrap;
 import org.littleshoot.proxy.MitmManager;
+import org.littleshoot.proxy.impl.ClientDetails;
 import org.littleshoot.proxy.impl.DefaultHttpProxyServer;
 import org.littleshoot.proxy.impl.ProxyUtils;
 import org.littleshoot.proxy.impl.ThreadPoolConfiguration;
@@ -339,7 +340,7 @@ public class BrowserMobProxyServer implements BrowserMobProxy {
 
             bootstrap.withChainProxyManager(new ChainedProxyManager() {
                 @Override
-                public void lookupChainedProxies(HttpRequest httpRequest, Queue<ChainedProxy> chainedProxies) {
+                public void lookupChainedProxies(HttpRequest httpRequest, Queue<ChainedProxy> chainedProxies, ClientDetails clientDetails) {
                     final InetSocketAddress upstreamProxy = upstreamProxyAddress;
                     if (upstreamProxy != null) {
                         chainedProxies.add(new ChainedProxyAdapter() {

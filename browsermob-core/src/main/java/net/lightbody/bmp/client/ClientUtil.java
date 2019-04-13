@@ -1,10 +1,7 @@
 package net.lightbody.bmp.client;
 
-import com.google.common.collect.ImmutableList;
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.proxy.dns.AdvancedHostResolver;
-import net.lightbody.bmp.proxy.dns.ChainedHostResolver;
-import net.lightbody.bmp.proxy.dns.DnsJavaResolver;
 import net.lightbody.bmp.proxy.dns.NativeCacheManipulatingResolver;
 import net.lightbody.bmp.proxy.dns.NativeResolver;
 import org.openqa.selenium.Proxy;
@@ -44,10 +41,11 @@ public class ClientUtil {
      * @return a new DnsJavaResolver
      * @deprecated The dnsjava resolver has been deprecated in favor of the standard JVM resolver and will be removed in BMP >2.1.
      */
+/*
     public static AdvancedHostResolver createDnsJavaResolver() {
         return new DnsJavaResolver();
     }
-
+*/
     /**
      * Creates a {@link net.lightbody.bmp.proxy.dns.ChainedHostResolver} instance that first attempts to resolve a hostname using a
      * {@link net.lightbody.bmp.proxy.dns.DnsJavaResolver}, then uses {@link net.lightbody.bmp.proxy.dns.NativeCacheManipulatingResolver}.
@@ -56,10 +54,11 @@ public class ClientUtil {
      * @return a new ChainedHostResolver that resolves addresses first using a DnsJavaResolver, then using a NativeCacheManipulatingResolver
      * @deprecated The dnsjava resolver has been deprecated in favor of the standard JVM resolver and will be removed in BMP >2.1.
      */
+/*
     public static AdvancedHostResolver createDnsJavaWithNativeFallbackResolver() {
         return new ChainedHostResolver(ImmutableList.of(new DnsJavaResolver(), new NativeCacheManipulatingResolver()));
     }
-
+*/
     /**
      * Creates a Selenium Proxy object from the BrowserMobProxy instance. The BrowserMobProxy must be started. Retrieves the address
      * of the Proxy using {@link #getConnectableAddress()}.
@@ -68,6 +67,7 @@ public class ClientUtil {
      * @return a Selenium Proxy instance, configured to use the BrowserMobProxy instance as its proxy server
      * @throws java.lang.IllegalStateException if the proxy has not been started.
      */
+
     public static org.openqa.selenium.Proxy createSeleniumProxy(BrowserMobProxy browserMobProxy) {
         return createSeleniumProxy(browserMobProxy, getConnectableAddress());
     }
