@@ -1,12 +1,12 @@
 # BrowserMob Proxy with Selenium
 
-Due to some conflicts with different versions of the guava library selenium and BrowserMob have stopped working together.
+Due to some conflicts with different versions of the guava library, Selenium and BrowserMob have stopped working together.
 
 This is a BrowserMob version, based on 2.1.6, which works with Selenium.
 
 For details of the libraries used look into buildBrowsermob.xml
 
-The only extern library required is'selenium-server-standalone-3.14.0.jar'. Together with the 'browsermob-3.14.0.jar' provided here everything should work
+The only extern library required is 'selenium-server-standalone-3.14.0.jar'. Together with the 'browsermob-3.14.0.jar' from the releases provided here everything should work
 
 
 Test Code:
